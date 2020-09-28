@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2048 Circle!</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;700&display=swap" rel="stylesheet">
+
+<style type="text/css">
+body{ 
+	font-family: 'Baloo Bhai 2', sans-serif; 
+	width: 550px;
+	margin: auto;
+	background-color: #F7F5F6;
+}
+td{
+	background-color: #DDD;
+	border-radius: 3px;
+}
+#grid{
+	border-spacing: 10px;
+	width: 550px;
+	height: 550px;
+	user-select: none;
+}
+.hidden{
+	visibility: hidden;
+}
+.tile{
+	width: 80px;
+	padding-top: calc(40px - 0.8em);
+	padding-bottom: calc(40px - 0.8em);
+	border-radius: 3px;
+	color: white;
+	font-weight: bold;
+	font-size: 2em;
+	transition: 0.1s ease-in-out;
+	text-align: center;
+	position: absolute;
+	z-index: 2;
+	background-color: #DDD;
+	box-shadow: 1px 1px 3px grey;
+}
+button{
+	border-radius: 3px;
+	background-color: grey;
+	border: none;
+	padding: 7px 14px;
+	color: white;
+	font-family: 'Baloo Bhai 2', sans-serif; 
+	cursor: pointer;
+	font-size: 1em;
+	float: right;
+}
+</style>
+</head>
+<body>
+	<audio id="swipe"><source src="swipe.mp3" type="audio/mp3"></audio>
+	<audio id="success"><source src="success-bell.wav" type="audio/wav"></audio>
+
+	<h1 style="margin-bottom: 0;">2048 Circle!</h1>
+	By: Kira L<br>
+	Use the arrow keys to move the tiles. If you are on a device without a keyboard, this game will not work. When two tiles with the same number collide, they will merge into their sum. Try to get the 2048 tile!<br>
+	<button onclick="newGame()">New Game</button>
+	<br><br>
+	<div id="tiles" style="position: absolute; user-select: none;"></div>
+
+	<table id="grid">
+		<tr>
+			<td class="hidden"></td>
+			<td class="hidden"></td>
+			<td></td>
+			<td></td>
+			<td class="hidden"></td>
+			<td class="hidden"></td>
+		</tr>
+		<tr>
+			<td class="hidden"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="hidden"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="hidden"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="hidden"></td>
+		</tr>
+		<tr>
+			<td class="hidden"></td>
+			<td class="hidden"></td>
+			<td></td>
+			<td></td>
+			<td class="hidden"></td>
+			<td class="hidden"></td>
+		</tr>
+	</table>
+
+	<br><br>
+	This game is a variation of 2048, which can be played at <a href="https://play2048.co/">play2048.co</a>.
+	If you like this, check out my other projects at <a href="http://kiraprograms.com">kiraprograms.com</a>!
+	<script type="text/javascript" src="move.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167430586-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-167430586-1");</script>
+</body>
+</html>
